@@ -1,0 +1,45 @@
+{
+  "name": "dbd-discord-bot",
+  "version": "1.0.0",
+  "description": "Discord bot for Dead by Daylight perk lookup",
+  "main": "src/bot.js",
+  "scripts": {
+    "start": "node src/bot.js",
+    "dev": "nodemon src/bot.js",
+    "update-data": "node src/utils/dataUpdater.js",
+    "build-contexts": "node src/utils/buildContexts.js all",
+    "build-contexts-test": "node src/utils/buildContexts.js test",
+    "contexts-stats": "node src/utils/buildContexts.js stats",
+    "contexts-survivor": "node src/utils/buildContexts.js survivor",
+    "contexts-killer": "node src/utils/buildContexts.js killer",
+    "retranslate-all": "node src/utils/retranslateContexts.js all",
+    "retranslate-find": "node src/utils/retranslateContexts.js find",
+    "retranslate-backup": "node src/utils/retranslateContexts.js backup",
+    "generate-invite": "node generate-invite.js",
+    "deploy": "npm run build-contexts && npm run deploy-commands",
+    "deploy-production": "./deploy.sh production",
+    "deploy-dev": "./deploy.sh development",
+    "docker-build": "docker build -t dbd-bot .",
+    "docker-run": "docker-compose up -d",
+    "docker-logs": "docker-compose logs -f dbd-bot"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "dead-by-daylight",
+    "dbd",
+    "perks"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.12.2",
+    "cheerio": "^1.0.0-rc.12",
+    "discord.js": "^14.14.1",
+    "dotenv": "^17.2.3",
+    "fs-extra": "^11.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
