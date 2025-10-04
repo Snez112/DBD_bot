@@ -5,6 +5,7 @@
   "main": "src/bot.js",
   "scripts": {
     "start": "node src/bot.js",
+    "deploy": "node src/deploy-commands.js",
     "dev": "nodemon src/bot.js",
     "update-data": "node src/utils/dataUpdater.js",
     "build-contexts": "node src/utils/buildContexts.js all",
@@ -15,13 +16,7 @@
     "retranslate-all": "node src/utils/retranslateContexts.js all",
     "retranslate-find": "node src/utils/retranslateContexts.js find",
     "retranslate-backup": "node src/utils/retranslateContexts.js backup",
-    "generate-invite": "node generate-invite.js",
-    "deploy": "npm run build-contexts && npm run deploy-commands",
-    "deploy-production": "./deploy.sh production",
-    "deploy-dev": "./deploy.sh development",
-    "docker-build": "docker build -t dbd-bot .",
-    "docker-run": "docker-compose up -d",
-    "docker-logs": "docker-compose logs -f dbd-bot"
+    "generate-invite": "node generate-invite.js"
   },
   "keywords": [
     "discord",
